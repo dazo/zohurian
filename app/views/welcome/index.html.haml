@@ -1,0 +1,240 @@
+!!! 5
+%html{:lang => "de"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    %title Dariusch Zohurian
+    
+    / Application CSS
+    %link{:href => "assets/application.css", :rel => "stylesheet"}
+    
+    / Bootstrap Core CSS
+    %link{:href => "assets/squadfree/bootstrap.css", :rel => "stylesheet", :type => "text/css"}
+    / Fonts
+    %link{:href => "assets/font-awesome/css/font-awesome.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "assets/squadfree/animate.css", :rel => "stylesheet"}
+    / Squad theme CSS
+    %link{:href => "assets/squadfree/style.css", :rel => "stylesheet"}
+    %link{:href => "assets/squadfree/color/default.css", :rel => "stylesheet"}
+    
+    = javascript_include_tag 'squadfree/jquery.min.js'
+    = javascript_include_tag 'squadfree/bootstrap.min.js'
+    = javascript_include_tag 'squadfree/jquery.easing.min.js'
+    = javascript_include_tag 'squadfree/jquery.scrollTo.js'
+    = javascript_include_tag 'squadfree/wow.min.js'
+    = javascript_include_tag 'squadfree/custom.js'
+
+  %body#page-top{"data-spy" => "scroll", "data-target" => ".navbar-custom"}
+    #preloader
+      #load 
+    %nav.navbar.navbar-custom.navbar-fixed-top{:role => "navigation"}
+      .container
+        - flash.each do |name, msg|
+          = content_tag :div, msg, class: "flash_#{name}" 
+        .navbar-header.page-scroll
+          %button.navbar-toggle{"data-target" => ".navbar-main-collapse", "data-toggle" => "collapse", :type => "button"}
+            %i.fa.fa-bars
+        / Collect the nav links, forms, and other content for toggling
+        .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "#intro"} Home
+            %li
+              %a{:href => "#about"} About me
+            %li
+              %a{:href => "#service"} Service
+            %li
+              %a{:href => "#contact"} Contact
+        / /.navbar-collapse
+      / /.container
+    / Section: intro
+    %section#intro.intro
+      .slogan
+        %h2
+          Dariusch Zohurian
+        %h4 Software developer from hamburg, dad and ...
+      .page-scroll
+        %a.btn.btn-circle{:href => "#service"}
+          %i.fa.fa-angle-double-down.animated
+    / /Section: intro
+    / Section: about
+    %section#about.home-section.text-center
+      .heading-about
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .wow.bounceInDown{"data-wow-delay" => "0.4s"}
+                .section-heading
+                  %h2 About me
+                  %i.fa.fa-2x.fa-angle-down
+      .container
+        .row
+          .col-lg-2.col-lg-offset-5
+            %hr.marginbot-50
+
+        .row
+          .col-xs-6.col-sm-3.col-md-3
+            .wow.bounceInUp{"data-wow-delay" => "0.2s"}
+              .team.boxed-grey
+                .inner
+                  %h5 twitter.com/dazo
+                  %p.subtitle Software Developer / Ruby on Rails
+                  .avatar
+                    = image_tag "squadfree/team/me.jpg", class: 'img-responsive img-circle'
+
+          .col-xs-6.col-sm-3.col-md-3
+            .wow.bounceInUp{"data-wow-delay" => "0.5s"}
+              .team.boxed-grey
+                .inner
+                  %h5 twitter.com/dazo
+                  %p.subtitle Software Developer / Ruby on Rails
+                  .avatar
+                    = image_tag "squadfree/team/me.jpg", class: 'img-responsive img-circle'
+          
+          .col-xs-6.col-sm-3.col-md-3
+            .wow.bounceInUp{"data-wow-delay" => "0.8s"}
+              .team.boxed-grey
+                .inner
+                  %h5 twitter.com/dazo
+                  %p.subtitle Software Developer / Ruby on Rails
+                  .avatar
+                    = image_tag "squadfree/team/me.jpg", class: 'img-responsive img-circle'
+          
+          .col-xs-6.col-sm-3.col-md-3
+            .wow.bounceInUp{"data-wow-delay" => "1s"}
+              .team.boxed-grey
+                .inner
+                  %h5 FC St. Pauli Fan
+                  %p.subtitle German sports club based in the St. Pauli quarter of Hamburg.
+                  .avatar
+                    = image_tag "squadfree/team/pauli.jpg", class: 'img-responsive img-circle'
+    / /Section: about
+    / Section: services
+    %section#service.home-section.text-center.bg-gray
+      .heading-about
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .wow.bounceInDown{"data-wow-delay" => "0.4s"}
+                .section-heading
+                  %h2 My Services
+                  %i.fa.fa-2x.fa-angle-down
+      .container
+        .row
+          .col-lg-2.col-lg-offset-5
+            %hr.marginbot-50/
+        .row
+          .col-sm-3.col-md-3
+            .wow.fadeInLeft{"data-wow-delay" => "0.2s"}
+              .service-box
+                .service-icon
+                  = image_tag "squadfree/icons/service-icon-1.png"
+                .service-desc
+                  %h5 Print
+                  %p Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
+          .col-sm-3.col-md-3
+            .wow.fadeInUp{"data-wow-delay" => "0.2s"}
+              .service-box
+                .service-icon
+                  = image_tag "squadfree/icons/service-icon-2.png"
+                .service-desc
+                  %h5 Web Design
+                  %p Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
+          .col-sm-3.col-md-3
+            .wow.fadeInUp{"data-wow-delay" => "0.2s"}
+              .service-box
+                .service-icon
+                  = image_tag "squadfree/icons/service-icon-3.png"
+                .service-desc
+                  %h5 Photography
+                  %p Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
+          .col-sm-3.col-md-3
+            .wow.fadeInRight{"data-wow-delay" => "0.2s"}
+              .service-box
+                .service-icon
+                  = image_tag "squadfree/icons/service-icon-4.png"
+                .service-desc
+                  %h5 Cloud System
+                  %p Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.
+    / /Section: services
+    / Section: contact
+    %section#contact.home-section.text-center
+      .heading-contact
+        .container
+          .row
+            .col-lg-8.col-lg-offset-2
+              .wow.bounceInDown{"data-wow-delay" => "0.4s"}
+                .section-heading
+                  %h2 Get in touch
+                  %i.fa.fa-2x.fa-angle-down
+      .container
+        .row
+          .col-lg-2.col-lg-offset-5
+            %hr.marginbot-50/
+        .row
+          .col-lg-8
+            .boxed-grey
+              = form_tag message_path, method: 'post', class: 'contact-form' do
+                .row
+                  .col-md-6
+                    .form-group
+                      %label{:for => 'name'}
+                        Name
+                      = text_field_tag :name, nil, class: 'form-control', placeholder: 'Enter name', required: 'required', type: 'text'
+                    .form-group
+                      %label{:for => 'email'}
+                        Email Address
+                      .input-group
+                        %span.input-group-addon
+                          %span.glyphicon.glyphicon-envelope
+                        = text_field_tag :email, nil, class: 'form-control', placeholder: 'Enter email', required: 'required', type: 'email'
+                    .form-group
+                      %label{:for => 'subject'}
+                        Subject
+                      = select_tag :subject, options_for_select(['Buiseness', 'Private']), class: 'form-control', name: 'subject', required: 'required' 
+                  .col-md-6
+                    .form-group
+                      %label{:for => 'message'}
+                        Message
+                      = text_area_tag :message, nil, class: 'form-control', cols: '25', name: 'message', placeholder: 'Message', required: 'required', rows: '9'
+                  .col-md-12
+                    %button#btnContactUs.btn.btn-skin.pull-right{:type => 'submit'}
+                      Send Message
+          .col-lg-4
+            .widget-contact
+              %h5 Address
+              %address
+                %strong Dariusch Zohurian-Ghanad
+                %br/
+                Zirpenweg 14
+                %br/
+                22043 Hamburg
+                %br/
+                %abbr{:title => "Phone"} Mobile:
+                +49176 486 93 741
+              %address
+                %strong Email
+                %br/
+                %a{:href => "mailto:#"} dariusch.zohurian@gmail.com
+              %address
+                %strong Network
+                %br/
+              %ul.company-social
+                %li.social-twitter
+                  %a{:href => "https://twitter.com/dazo", :target => "_blank"}
+                    %i.fa.fa-twitter
+                %li.social-xing
+                  %a{:href => "https://www.xing.com/profile/Dariusch_Zohurian", :target => "_blank"}
+                    %i.fa.fa-xing
+    / /Section: contact
+    %footer
+      .container
+        .row
+          .col-md-12.col-lg-12
+            .wow.shake{"data-wow-delay" => "0.4s"}
+              .page-scroll.marginbot-30
+                %a#totop.btn.btn-circle{:href => "#intro"}
+                  %i.fa.fa-angle-double-up.animated
+            %p ©Copyright zohurian.de
